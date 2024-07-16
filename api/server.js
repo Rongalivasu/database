@@ -50,6 +50,7 @@ app.get('/employees', async (req, res) => {
   try {
     const employees = await Employee.find({});
     res.json(employees);
+    console.log(req.body);
   } catch (err) {
     console.error('Error fetching employees:', err); // Log the error
     res.status(500).send('Internal Server Error');
